@@ -17,14 +17,14 @@ function run() {
   };
 
   // Make the HTTP request using Http.request
-  // const response = Http.request(request);
-  const response = httpFetch(request);
+  const response = Http.request(request);
+  // const response = httpFetch(request);
 
   // Check if the response status is not 200
   if (response.status !== 200) {
     const errorMessage = `Error ${response.status}: ${response.statusText}`;
     Host.outputString(errorMessage);
-    // throw new Error(errorMessage);
+    throw new Error(errorMessage);
   }
 
   // Parse response JSON
